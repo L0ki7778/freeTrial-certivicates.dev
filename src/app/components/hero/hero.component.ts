@@ -6,6 +6,7 @@ import { Person, PersonList } from '../../interfaces/person';
 import { PersonPrefixPipe } from '../../pipes/person-prefix.pipe';
 import { LetterAnimationDirective } from '../../directives/letter-animation.directive';
 import { OutputComponent } from '../output/output.component';
+import { HashtagSyntaxComponent } from '../hashtag-syntax/hashtag-syntax.component';
 
 @Component({
   selector: 'app-hero',
@@ -15,6 +16,7 @@ import { OutputComponent } from '../output/output.component';
     LetterAnimationDirective,
     PersonPrefixPipe,
     OutputComponent,
+    HashtagSyntaxComponent
   ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
@@ -30,7 +32,9 @@ export class HeroComponent implements PersonList {
 
   eventData:any;
 
-  handleEventOutput(event:number){
+  handleEventOutput(event:number, element:Object){
+    console.log(element)
+    console.log(typeof element)
     this.eventData=event
   }
 }

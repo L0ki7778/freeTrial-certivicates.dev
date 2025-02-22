@@ -19,5 +19,7 @@
 </button>
 
 <br><br><br>
-<app-output (addedClick)="handleEventOutput($event)"></app-output>
+<app-output #outputElement (addedClick)="handleEventOutput($event, outputElement)"></app-output>
+<app-hashtag-syntax></app-hashtag-syntax>
+
 <app-footer></app-footer>
