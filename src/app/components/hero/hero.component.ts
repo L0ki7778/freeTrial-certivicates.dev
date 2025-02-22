@@ -5,19 +5,32 @@ import { HeaderDirective } from '../../directives/header.directive';
 import { Person, PersonList } from '../../interfaces/person';
 import { PersonPrefixPipe } from '../../pipes/person-prefix.pipe';
 import { LetterAnimationDirective } from '../../directives/letter-animation.directive';
+import { OutputComponent } from '../output/output.component';
 
 @Component({
   selector: 'app-hero',
-  imports: [FooterComponent, HeaderComponent, LetterAnimationDirective, PersonPrefixPipe],
+  imports: [
+    FooterComponent,
+    HeaderComponent,
+    LetterAnimationDirective,
+    PersonPrefixPipe,
+    OutputComponent,
+  ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent implements PersonList {
-  persons:Array<Person> = [
-    { gender: 'male', firstName: 'John', lastName: "Smith" },
-    { gender: 'female', firstName: 'John', lastName: "Smith" },
-    { gender: 'female', firstName: 'John', lastName: "Smith" },
-    { gender: 'male', firstName: 'John', lastName: "Smith" },
-    { gender: 'male', firstName: 'John', lastName: "Smith" },
+  persons: Array<Person> = [
+    { gender: 'male', firstName: 'John', lastName: 'Smith' },
+    { gender: 'female', firstName: 'John', lastName: 'Smith' },
+    { gender: 'female', firstName: 'John', lastName: 'Smith' },
+    { gender: 'male', firstName: 'John', lastName: 'Smith' },
+    { gender: 'male', firstName: 'John', lastName: 'Smith' },
   ];
+
+  eventData:any;
+
+  handleEventOutput(event:number){
+    this.eventData=event
+  }
 }
