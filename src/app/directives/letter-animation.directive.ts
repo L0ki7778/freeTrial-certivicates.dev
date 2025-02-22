@@ -1,20 +1,11 @@
-import {
-  Directive,
-  ElementRef,
-  HostBinding,
-  HostListener,
-  Input,
-  Renderer2,
-} from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, input, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: 'button:not([disableIsActive]),[isActive]',
+  selector: 'button:not([disableIsActive]),[isActive]'
 })
 export class LetterAnimationDirective {
-  @HostBinding('class.yellow')
-  @Input() yellow = false;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {
+ constructor(private el: ElementRef, private renderer: Renderer2) {
     this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'red');
     this.renderer.setStyle(this.el.nativeElement, 'color', 'white');
     this.renderer.setStyle(this.el.nativeElement, 'padding', '10px');
@@ -25,6 +16,9 @@ export class LetterAnimationDirective {
     this.renderer.setStyle(this.el.nativeElement, 'fontSize', '16px');
     this.renderer.setStyle(this.el.nativeElement, 'fontFamily', 'Cursive');
   }
+
+  @HostBinding('class.yellow')
+  yellow = input(false);
 
   ngAfterViewInit() {
     const text = this.el.nativeElement.innerText;
@@ -50,18 +44,17 @@ export class LetterAnimationDirective {
     return fragment;
   }
 
+
   @HostListener('mouseenter') onMouseEnter() {
-    if (this.yellow) {
-      this.renderer.setStyle(
-        this.el.nativeElement,
-        'backgroundColor',
-        'yellow'
-      );
-    } else {
+    if(this.yellow()){
+
+      this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'yellow');
+    }
+    else{
       this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'blue');
     }
     this.renderer.setStyle(this.el.nativeElement, 'fontFamily', 'Arial');
-
+    
     const spans = this.el.nativeElement.querySelectorAll('.spin-letter');
     spans.forEach((span: HTMLElement) => {
       this.renderer.setStyle(span, 'transform', 'rotate(360deg)');
@@ -74,4 +67,5 @@ export class LetterAnimationDirective {
       this.renderer.setStyle(span, 'transform', 'rotate(0deg)');
     });
   }
+
 }
