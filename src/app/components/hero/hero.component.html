@@ -1,6 +1,20 @@
 <app-header></app-header>
-<p>hero works!</p>
+@for(person of persons; track $index){
+    @if($index % 2 !== 0){
+        <div>{{person | personPrefix:false}}</div>
+    }@else {
+        <div>{{person | personPrefix:true}}</div>
+    }
+}
 <button>
+    Letter Animation
+</button>
+<br><br><br>
+<button [yellow]="true">
+    Letter Animation
+</button>
+<br><br><br>
+<button disableIsActive>
     Letter Animation
 </button>
 <app-footer></app-footer>

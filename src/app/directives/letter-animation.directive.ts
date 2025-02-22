@@ -1,11 +1,20 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  Input,
+  Renderer2,
+} from '@angular/core';
 
 @Directive({
-  selector: 'button'
+  selector: 'button:not([disableIsActive]),[isActive]',
 })
 export class LetterAnimationDirective {
+  @HostBinding('class.yellow')
+  @Input() yellow = false;
 
- constructor(private el: ElementRef, private renderer: Renderer2) {
+  constructor(private el: ElementRef, private renderer: Renderer2) {
     this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'red');
     this.renderer.setStyle(this.el.nativeElement, 'color', 'white');
     this.renderer.setStyle(this.el.nativeElement, 'padding', '10px');
@@ -42,9 +51,17 @@ export class LetterAnimationDirective {
   }
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'blue');
+    if (this.yellow) {
+      this.renderer.setStyle(
+        this.el.nativeElement,
+        'backgroundColor',
+        'yellow'
+      );
+    } else {
+      this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'blue');
+    }
     this.renderer.setStyle(this.el.nativeElement, 'fontFamily', 'Arial');
-    
+
     const spans = this.el.nativeElement.querySelectorAll('.spin-letter');
     spans.forEach((span: HTMLElement) => {
       this.renderer.setStyle(span, 'transform', 'rotate(360deg)');
@@ -57,5 +74,4 @@ export class LetterAnimationDirective {
       this.renderer.setStyle(span, 'transform', 'rotate(0deg)');
     });
   }
-
 }
