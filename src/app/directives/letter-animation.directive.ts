@@ -22,8 +22,7 @@ export class LetterAnimationDirective {
 
   ngAfterViewInit() {
     const text = this.el.nativeElement.innerText;
-    this.el.nativeElement.innerHTML = ''; // Clear existing text
-
+    this.el.nativeElement.innerHTML = ''; 
     const fragment = this.createLetterAnimation(text);
     this.renderer.appendChild(this.el.nativeElement, fragment);
   }
@@ -48,10 +47,10 @@ export class LetterAnimationDirective {
   @HostListener('mouseenter') onMouseEnter() {
     if(this.yellow()){
 
-      this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'yellow');
+      this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'orange');
     }
     else{
-      this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'blue');
+      this.renderer.setStyle(this.el.nativeElement, 'background', 'blue');
     }
     this.renderer.setStyle(this.el.nativeElement, 'fontFamily', 'Arial');
     
