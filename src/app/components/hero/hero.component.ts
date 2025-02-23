@@ -7,6 +7,7 @@ import { PersonPrefixPipe } from '../../pipes/person-prefix.pipe';
 import { LetterAnimationDirective } from '../../directives/letter-animation.directive';
 import { OutputComponent } from '../output/output.component';
 import { HashtagSyntaxComponent } from '../hashtag-syntax/hashtag-syntax.component';
+import { SignalComponent } from '../signal/signal.component';
 
 @Component({
   selector: 'app-hero',
@@ -16,7 +17,8 @@ import { HashtagSyntaxComponent } from '../hashtag-syntax/hashtag-syntax.compone
     LetterAnimationDirective,
     PersonPrefixPipe,
     OutputComponent,
-    HashtagSyntaxComponent
+    HashtagSyntaxComponent,
+    SignalComponent
   ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
