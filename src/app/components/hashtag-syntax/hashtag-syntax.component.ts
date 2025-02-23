@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-hashtag-syntax',
+  selector: 'hashtag',
   imports: [],
   templateUrl: './hashtag-syntax.component.html',
   styleUrl: './hashtag-syntax.component.scss'

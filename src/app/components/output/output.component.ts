@@ -2,7 +2,7 @@ import { Component, output } from '@angular/core';
 import { HeaderDirective } from '../../directives/header.directive';
 
 @Component({
-  selector: 'app-output',
+  selector: 'output',
   imports: [HeaderDirective],
   templateUrl: './output.component.html',
   styleUrl: './output.component.scss',
