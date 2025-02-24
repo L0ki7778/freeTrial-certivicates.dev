@@ -12,13 +12,9 @@ import { SignalComponent } from '../signal/signal.component';
 @Component({
   selector: 'app-hero',
   imports: [
-    FooterComponent,
-    HeaderComponent,
     LetterAnimationDirective,
     PersonPrefixPipe,
-    OutputComponent,
-    HashtagSyntaxComponent,
-    SignalComponent
+    
   ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
@@ -32,11 +28,7 @@ export class HeroComponent implements PersonList {
     { gender: 'male', firstName: 'John', lastName: 'Smith' },
   ];
 
-  eventData:any;
+  
 
-  handleEventOutput(event:number, element:Object){
-    console.log(element)
-    console.log(typeof element)
-    this.eventData=event
-  }
+  
 }

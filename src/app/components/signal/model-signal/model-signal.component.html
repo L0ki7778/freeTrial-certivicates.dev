@@ -1,0 +1,12 @@
+<div class="text-white">{{input()}}</div>
+<div class="text-white"></div>
+<div class="text-white"></div>
+
+<div>
+    <div>Der Name ist {{modelName()}}</div>
+    <button (click)="modelName.set('newName')" type="button">NameChange</button>
+</div>
+<div>
+    <div>Alter {{modelAge()}} Jahre</div>
+    <button (click)="incrementAge()" type="button">age+</button>
+</div>
