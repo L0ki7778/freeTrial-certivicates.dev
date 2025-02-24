@@ -1,29 +1,20 @@
 import { Directive, ElementRef, HostBinding, HostListener, input, Renderer2 } from '@angular/core';
+import {  trigger,  state,  style,  animate,  transition,} from '@angular/animations';
 
 @Directive({
-    selector: 'button:not([disableIsActive]),[isActive]',
-    
+  selector: 'button:not([disableIsActive]),[isActive]',
+
 })
 export class LetterAnimationDirective {
 
- constructor(private el: ElementRef, private renderer: Renderer2) {
-    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'red');
-    this.renderer.setStyle(this.el.nativeElement, 'color', 'white');
-    this.renderer.setStyle(this.el.nativeElement, 'padding', '10px');
-    this.renderer.setStyle(this.el.nativeElement, 'border', 'none');
-    this.renderer.setStyle(this.el.nativeElement, 'borderRadius', '5px');
-    this.renderer.setStyle(this.el.nativeElement, 'cursor', 'pointer');
-    this.renderer.setStyle(this.el.nativeElement, 'fontWeight', 'bold');
-    this.renderer.setStyle(this.el.nativeElement, 'fontSize', '16px');
-    this.renderer.setStyle(this.el.nativeElement, 'fontFamily', 'Cursive');
-  }
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
 
   @HostBinding('class.yellow')
   yellow = input(false);
 
   ngAfterViewInit() {
     const text = this.el.nativeElement.innerText;
-    this.el.nativeElement.innerHTML = ''; 
+    this.el.nativeElement.innerHTML = '';
     const fragment = this.createLetterAnimation(text);
     this.renderer.appendChild(this.el.nativeElement, fragment);
   }
@@ -36,7 +27,7 @@ export class LetterAnimationDirective {
       this.renderer.addClass(span, 'spin-letter');
       this.renderer.setStyle(span, 'display', 'inline-block');
       this.renderer.setStyle(span, 'transition', 'transform 0.5s ease');
-      this.renderer.setStyle(span, 'transitionDelay', `${index * 50}ms`);
+      this.renderer.setStyle(span, 'animationDelay', `${index * 100}ms`);
       this.renderer.setProperty(span, 'innerText', letter);
       this.renderer.appendChild(fragment, span);
     });
@@ -46,18 +37,18 @@ export class LetterAnimationDirective {
 
 
   @HostListener('mouseenter') onMouseEnter() {
-    if(this.yellow()){
+    if (this.yellow()) {
 
       this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'orange');
     }
-    else{
+    else {
       this.renderer.setStyle(this.el.nativeElement, 'background', 'blue');
     }
-    this.renderer.setStyle(this.el.nativeElement, 'fontFamily', 'Arial');
-    
+    // this.renderer.setStyle(this.el.nativeElement, 'fontFamily', 'Arial');
+
     const spans = this.el.nativeElement.querySelectorAll('.spin-letter');
     spans.forEach((span: HTMLElement) => {
-      this.renderer.setStyle(span, 'transform', 'rotate(360deg)');
+      this.renderer.addClass(span, 'animate');
     });
   }
 
