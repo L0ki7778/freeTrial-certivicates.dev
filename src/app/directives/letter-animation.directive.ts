@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostBinding, HostListener, input, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: 'button:not([disableIsActive]),[isActive]'
+    selector: 'button:not([disableIsActive]),[isActive]',
+    standalone: false
 })
 export class LetterAnimationDirective {
 
