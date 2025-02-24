@@ -3,13 +3,15 @@ import { Person, PersonList } from '../../interfaces/person';
 import { PersonPrefixPipe } from '../../pipes/person-prefix.pipe';
 import { LetterAnimationDirective } from '../../directives/letter-animation.directive';
 import { NgToolsComponent } from '../ng-tools/ng-tools.component';
+import { StateButtonComponent } from '../state-button/state-button.component';
 
 @Component({
   selector: 'app-hero',
   imports: [
     LetterAnimationDirective,
     PersonPrefixPipe,
-    NgToolsComponent
+    NgToolsComponent,
+    StateButtonComponent
   ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',

@@ -1,5 +1,6 @@
 import { Component, computed, contentChild, ElementRef, input } from '@angular/core';
 
+
 @Component({
   selector: 'ng-tools',
   imports: [],

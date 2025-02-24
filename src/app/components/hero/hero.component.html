@@ -23,4 +23,19 @@
 
     <button (click)="changeDisplay()">Show Template</button>
     <!-- <button (click)="displayTemplate.set(false)">Hide Template</button> -->
+
+    <state-button [initialTemplate]="save" [workingTemplate]="saving" [doneTemplate]="saved"></state-button>
+    
+    <ng-template #save>
+        Save
+    </ng-template>
+    
+    <ng-template #saving>
+        <img src="https://github.com/alcfeoh/ng-advanced-workshop/raw/master/src/assets/loader.gif" style="width: 20px">
+    </ng-template>
+    
+    <ng-template #saved>
+        Saved!
+    </ng-template>
+    
 </div>
