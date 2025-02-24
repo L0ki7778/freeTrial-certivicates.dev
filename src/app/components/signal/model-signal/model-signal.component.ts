@@ -1,4 +1,4 @@
-import { Component, input, model } from '@angular/core';
+import { Component, computed, input, model } from '@angular/core';
 import { LetterAnimationDirective } from '../../../directives/letter-animation.directive';
 
 @Component({
@@ -9,6 +9,9 @@ import { LetterAnimationDirective } from '../../../directives/letter-animation.d
 })
 export class ModelSignalComponent {
   input = input.required<string>()
+  greeting = computed(()=>{
+    return `You just typed ${this.input()}`
+  })
 
   modelName = model.required<string>()
   modelAge = model(1)
