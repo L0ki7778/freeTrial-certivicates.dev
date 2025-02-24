@@ -4,13 +4,34 @@
 @use 'assets/scss/figtree';
 
 
-body{
-    margin:0;
+body {
+    margin: 0;
     font-family: 'Figtree', sans-serif;
 }
 
-.active{
+.active {
     color: #FD5B4F !important;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.col-box {
+    @apply flex flex-col items-center;
+}
+
+.input-field {
+    @apply bg-daBlue_80 rounded-lg border-solid border-2 border-daGray_90
+}
+
+div{
+    color: white;
+}
