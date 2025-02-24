@@ -17,7 +17,10 @@
             Letter Animation
         </button>
     </div>
-    <ng-tools class="w-1/2">
+    <ng-tools [showTemplate]="displayTemplate()" class="w-1/2">
        <div> Hier ist <b #test>ein Template</b> vom Parent ins Child projeziert worden :D</div>
     </ng-tools>
+
+    <button (click)="changeDisplay()">Show Template</button>
+    <!-- <button (click)="displayTemplate.set(false)">Hide Template</button> -->
 </div>

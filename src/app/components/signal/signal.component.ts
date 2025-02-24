@@ -39,21 +39,15 @@ export class SignalComponent implements OnInit {
     effect(() => {
       this.effectRef = ""
       this.effectRef = `${this.effectRef} was triggered ${this.count()} times.`
-      console.log(this.effectRef)
-      console.log(this.count$)
-
     })
 
   }
 
   ngOnInit(): void {
-      console.log(this.modelComponent())
-      console.log(this.modelComponent()?.modelAge())
   }
 
   increment(): number {
     this.count.update((value) => value + 1);
-    console.log(this.computedCount(), "after increment")
     this.showCount.set(true)
     return this.count();
   }
@@ -61,6 +55,5 @@ export class SignalComponent implements OnInit {
 
   consoleCounter() {
     this.computedCount()
-    console.log(this.computedCount())
   }
 }

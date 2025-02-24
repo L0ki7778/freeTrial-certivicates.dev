@@ -1,4 +1,4 @@
-import { Component, contentChild, ElementRef } from '@angular/core';
+import { Component, computed, contentChild, ElementRef, input } from '@angular/core';
 
 @Component({
   selector: 'ng-tools',
@@ -8,6 +8,10 @@ import { Component, contentChild, ElementRef } from '@angular/core';
 })
 export class NgToolsComponent {
 infoContent = contentChild.required<ElementRef>('test')
+showTemplate=input.required<boolean>()
+show=computed(()=>{
+  return this.showTemplate()
+})
 
 constructor(){}
 }
