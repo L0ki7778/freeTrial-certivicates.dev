@@ -2,7 +2,7 @@ import { Directive, ElementRef, Renderer2, HostListener, AfterViewInit } from '@
 
 @Directive({
     selector: 'button',
-    standalone: false
+    
 })
 export class HeaderDirective implements AfterViewInit {
   constructor(private el: ElementRef, private renderer: Renderer2) {

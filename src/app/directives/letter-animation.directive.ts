@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostBinding, HostListener, input, Renderer2 } fr
 
 @Directive({
     selector: 'button:not([disableIsActive]),[isActive]',
-    standalone: false
+    
 })
 export class LetterAnimationDirective {
 

@@ -3,7 +3,7 @@ import { Person } from '../interfaces/person';
 
 @Pipe({
     name: 'personPrefix',
-    standalone: false
+    
 })
 export class PersonPrefixPipe implements PipeTransform {
 
