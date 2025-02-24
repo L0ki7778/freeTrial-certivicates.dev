@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, contentChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'ng-tools',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './ng-tools.component.scss'
 })
 export class NgToolsComponent {
+infoContent = contentChild.required<ElementRef>('test')
 
+constructor(){}
 }
