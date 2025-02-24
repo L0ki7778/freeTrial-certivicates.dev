@@ -1,7 +1,8 @@
 import { Directive, ElementRef, Renderer2, HostListener, AfterViewInit } from '@angular/core';
 
 @Directive({
-  selector: 'button',
+    selector: 'button',
+    
 })
 export class HeaderDirective implements AfterViewInit {
   constructor(private el: ElementRef, private renderer: Renderer2) {

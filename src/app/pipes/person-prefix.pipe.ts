@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Person } from '../interfaces/person';
 
 @Pipe({
-  name: 'personPrefix'
+    name: 'personPrefix',
+    
 })
 export class PersonPrefixPipe implements PipeTransform {
 
