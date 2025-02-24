@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, effect,Signal, signal, WritableSignal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect,OnInit,Signal, signal, viewChild, WritableSignal } from '@angular/core';
 import { LetterAnimationDirective } from '../../directives/letter-animation.directive';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { AsyncPipe } from '@angular/common';
@@ -11,7 +11,7 @@ import { ModelSignalComponent } from './model-signal/model-signal.component';
   styleUrl: './signal.component.scss',
   changeDetection:ChangeDetectionStrategy.OnPush
 })
-export class SignalComponent {
+export class SignalComponent implements OnInit {
   count: WritableSignal<number> = signal(0); // writable
   //not writable with constant logic but relative to this.count
   //value of computed will change according to relative linked logic-->count changes, so computedCount changes
@@ -29,6 +29,9 @@ export class SignalComponent {
   count$ = toObservable(this.count);
   counterSignal: Signal<number|undefined>=toSignal(this.count$);
 
+  //grants access to the component and all of it's properties!!!!
+  private modelComponent = viewChild(ModelSignalComponent)
+
   name='Angular';
   age=21;
 
@@ -41,6 +44,11 @@ export class SignalComponent {
 
     })
 
+  }
+
+  ngOnInit(): void {
+      console.log(this.modelComponent())
+      console.log(this.modelComponent()?.modelAge())
   }
 
   increment(): number {
