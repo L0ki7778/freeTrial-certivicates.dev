@@ -1,0 +1,16 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'assets/scss/figtree';
+
+
+body{
+    margin:0;
+    font-family: 'Figtree', sans-serif;
+}
+
+.active{
+    color: #FD5B4F !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
