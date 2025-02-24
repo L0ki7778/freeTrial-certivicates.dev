@@ -1,26 +1,23 @@
-
-<div class="p-10 max-w-screen-1570 flex justify-center flex-col">
-    
-    @for(person of persons; track $index;let e = $even, index = $index){
+<div class="flex max-w-screen-1570 items-center justify-evenly w-full">
+    <div class="p-10  flex justify-center gap-8 flex-col">
+        @for(person of persons; track $index;let e = $even, index = $index){
         @if(e){
-            <div style="background-color: aquamarine">{{person | personPrefix:false}} with index {{index}}</div>
+        <div style="background-color: aquamarine">{{person | personPrefix:false}} with index {{index}}</div>
         }@else {
-            <div>{{person | personPrefix:true}}</div>
+        <div>{{person | personPrefix:true}}</div>
         }
-    }
-    <button>
-        Letter Animation
-    </button>
-    <br><br><br>
-    <button [yellow]="true">
-        Letter Animation
-    </button>
-    <br><br><br>
-    <button disableIsActive>
-        Letter Animation
-    </button>
-    
-    <br><br><br>
-    
-    
+        }
+        <button>
+            Letter Animation
+        </button>
+        <button [yellow]="true">
+            Letter Animation
+        </button>
+        <button disableIsActive>
+            Letter Animation
+        </button>
+    </div>
+    <ng-tools class="w-1/2">
+        Hier ist ein Template vom Parent ins Child projeziert worden :D
+    </ng-tools>
 </div>
