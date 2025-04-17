@@ -1,17 +1,21 @@
-<button (click)="increment()">Increment</button>
-<div class="flex gap-20 my-2  bg-[green] text-[white]">
-    <p>Current Count: {{ count() }}</p>
+<div class="flex flex-col gap-4">
+    <button (click)="increment()">Increment</button>
+    <div class="flex gap-20 my-2  bg-[green] text-[white]">
+        <p>Current Count: {{ count() }}</p>
 
-    <p>Computed Count (count * 2): {{ computedCount() }}</p>
+        <p>Computed Count (count * 2): {{ computedCount() }}</p>
+    </div>
+    <div class="bg-[gray] text-[20px] font-bold">{{effectRef}}</div>
+
+    <div>
+        <div class="border-2 border-[black] bg-[orange] font-bold text-[blue]">From signal to observable {{count$ |
+            async}} und benötigt eine async-pipe aus dem common module</div>
+        <div class="border-2 border-[black] bg-[orange] font-bold text-[blue]">From observable to signal
+            {{counterSignal()}}</div>
+    </div>
+    <div>
+        <input class="input-field" #inputSignal (input)="inputSignal.value = inputSignal.value" type="text">
+        
+    </div>
+    <databinding-signal [modelAge]="age" [modelName]="name" [input]="inputSignal.value"></databinding-signal>
 </div>
-<ng-content></ng-content>
-<!-- @if(effectRef()){ -->
-
-<div class="bg-[gray] text-[20px] font-bold">{{effectRef}}</div>
-
-<div>
-    <div class="border-2 border-[black] bg-[orange] font-bold text-[blue]">From signal to observable {{count$ | async}} und benötigt eine async-pipe aus dem common module</div>
-    <div class="border-2 border-[black] bg-[orange] font-bold text-[blue]">From observable to signal {{counterSignal()}}</div>
-</div>
-
-<!-- } -->

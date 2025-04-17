@@ -1,8 +1,8 @@
-<div class="flex-col">
-    <input #input (input)="input.value = input.value" type="text">
+<div class="col-box text-white">
+    <input class="input-field" #input (input)="input.value = input.value" type="text">
     
     <button (click)="logValue(input.value)">log value</button>
 
-    <input [value]="input.value" type="text">
+    <input class="input-field" [value]="input.value" type="text">
     
 </div>

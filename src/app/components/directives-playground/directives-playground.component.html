@@ -1,0 +1,17 @@
+<div class="flex gap-4 justify-start w-full max-w-[1440px] p-4 items-center">
+    <button (click)="changeState()">Set Class isActive to {{activeString()}}</button>
+    @if(!activeState()){
+        <div class="block self-start max-w-[500px] ">
+            
+            <h2>Ich bin eine strukturelle Direktive, die in das HTML eingebunden/gezeigt wird, wenn die Bedingungen erfüllt sind</h2>
+        </div>
+    }
+</div>
+
+<h2 [appHostPractice]="activeState()" class="text-22 blue-bg">Ich bin eine Attribut-Direktive, und werde optisch über meine Direktive verändert</h2>
+<h2 [appHostPractice]="activeState()" class="text-22 blue-bg">Komm mal mit deiner Maus zu uns :D</h2>
+
+
+<!-- @HostListener in Direktiven ersetzen komplette Events wie (click), (input), etc -->
+<!-- @HostBinding dagegen kann genutzt werden, um den State einer aktiven class auf true zu setzen, also im HTML anzuwenden, oder durch false zu entfernen-->
+

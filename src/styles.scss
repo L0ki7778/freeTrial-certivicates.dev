@@ -4,13 +4,61 @@
 @use 'assets/scss/figtree';
 
 
-body{
-    margin:0;
+body {
+    margin: 0;
     font-family: 'Figtree', sans-serif;
 }
 
-.active{
+.active {
     color: #FD5B4F !important;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.col-box {
+    @apply flex flex-col items-center;
+}
+
+.input-field {
+    @apply bg-daBlue_80 rounded-lg border-solid border-2 border-daGray_90
+}
+
+button {
+    @apply bg-red text-white p-3 border-none rounded cursor-pointer text-lg font-bold font-sans flex justify-center
+}
+
+
+
+@keyframes rotateAndLift {
+    0% {
+        transform: rotateY(0deg) translateY(0);
+        font-family: 'fantasy';
+    }
+
+    50% {
+        transform: rotateY(360deg) translateY(-20px);
+        font-family: 'fantasy';
+    }
+
+    51% {
+        font-family: 'cursive';
+    }
+
+    100% {
+        transform: rotateY(720deg) translateY(0);
+        font-family: 'cursive';
+    }
+}
+
+.spin-letter.animate {
+    animation: rotateAndLift .5s linear forwards;
+}

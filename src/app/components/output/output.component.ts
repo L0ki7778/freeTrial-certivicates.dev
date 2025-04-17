@@ -1,9 +1,10 @@
 import { Component, output } from '@angular/core';
-import { HeaderDirective } from '../../directives/header.directive';
+
+import { LetterAnimationDirective } from '../../directives/letter-animation.directive';
 
 @Component({
   selector: 'output',
-  imports: [HeaderDirective],
+  imports: [LetterAnimationDirective],
   templateUrl: './output.component.html',
   styleUrl: './output.component.scss',
 })
