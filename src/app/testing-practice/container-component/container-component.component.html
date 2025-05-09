@@ -1,0 +1,5 @@
+<div class="w-max-[1440px] grid grid-cols-3 gap-4">
+  @for(pokemon of (pokeDetails$ | async); track pokemon; let i = $index) {
+  <card [pokemon]="pokemon"></card>
+  }
+</div>
