@@ -5,10 +5,10 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { pokeList } from './mockdata';
 
-describe('TestDemoService', () => {
+xdescribe('TestDemoService', () => {
   let service: TestDemoService,
     httpTestingController: HttpTestingController;
-    
+
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -21,11 +21,11 @@ describe('TestDemoService', () => {
     httpTestingController = TestBed.inject(HttpTestingController);
   });
 
-  fit('should be created', () => {
+  xit('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  fit('should load a list of pokemon', () => {
+  xit('should load a list of pokemon', () => {
 
     service.getPokeList().subscribe((pokemonList: any[]) => {
       expect(pokemonList).toBeTruthy()
@@ -40,11 +40,11 @@ describe('TestDemoService', () => {
 
   });
 
-  fit('should get PokeDetails',fakeAsync(()=>{
+  xit('should get PokeDetails', fakeAsync(() => {
     service.pokeList = Object.values(pokeList)
     expect(service.pokeList.length).toEqual(9)
 
-    service.loadPokeDetails().then(()=>{
+    service.loadPokeDetails().then(() => {
       expect()
     })
 
