@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { DemoPipe } from '../../pipes/demo.pipe';
+import { Person } from '../../interfaces/person';
 
 
 @Component({
   selector: 'app-demo',
-  imports: [DemoPipe],
+  imports: [],
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.scss'
 })
 export class DemoComponent {
-  firstString = "John";
-  secondString = "Smith";
-
+  person = input.required<Person>()
 }
