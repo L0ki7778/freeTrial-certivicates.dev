@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DirectivesPlaygroundComponent } from './directives-playground.component';
+import { HostPracticeDirective } from '../../directives/host-practice.directive';
 
 describe('DirectivesPlaygroundComponent', () => {
   let component: DirectivesPlaygroundComponent;
@@ -8,9 +9,9 @@ describe('DirectivesPlaygroundComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DirectivesPlaygroundComponent]
+      imports: [DirectivesPlaygroundComponent, HostPracticeDirective]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(DirectivesPlaygroundComponent);
     component = fixture.componentInstance;

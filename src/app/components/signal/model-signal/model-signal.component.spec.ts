@@ -10,10 +10,11 @@ describe('ModelSignalComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ModelSignalComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ModelSignalComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('input', 'John');
     fixture.detectChanges();
   });
 

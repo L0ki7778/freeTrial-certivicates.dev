@@ -10,10 +10,11 @@ describe('PresentationalComponentComponent', () => {
     await TestBed.configureTestingModule({
       imports: [PresentationalComponentComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PresentationalComponentComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('pokemon', 'Pikachu');
     fixture.detectChanges();
   });
 
