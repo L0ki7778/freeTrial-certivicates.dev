@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ContainerComponentComponent } from './container-component.component';
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
-import { TestDemoService } from '../service/test-demo.service';
+import { PokeService } from '../../services/pokemon/pokemon-service';
 
 fdescribe('ContainerComponentComponent', () => {
   let component: ContainerComponentComponent;
@@ -11,20 +11,20 @@ fdescribe('ContainerComponentComponent', () => {
   let service: any;
 
   beforeEach(async () => {
-    const pokemonService = jasmine.createSpyObj('TestDemoService', ['loadPokemon']);
+    const pokemonService = jasmine.createSpyObj('PokeService', ['loadPokemon']);
 
     await TestBed.configureTestingModule({
       imports: [ContainerComponentComponent],
       providers: [
         provideHttpClient(),
         provideHttpClientTesting(),
-        { provide: TestDemoService, useValue: pokemonService }
+        { provide: PokeService, useValue: pokemonService }
       ]
     })
       .compileComponents();
 
     fixture = TestBed.createComponent(ContainerComponentComponent);
-    service = TestBed.inject(TestDemoService);
+    service = TestBed.inject(PokeService);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

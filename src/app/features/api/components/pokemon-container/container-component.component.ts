@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { TestDemoService } from '../service/test-demo.service';
+import { PokeService } from '../../services/pokemon/pokemon-service';
 import { map, Observable, of } from 'rxjs';
-import { PresentationalComponentComponent } from '../presentational-component/presentational-component.component';
 import { AsyncPipe } from '@angular/common';
+import { PresentationalComponentComponent } from '../pokemon-presentational/presentational-component.component';
 
 @Component({
   selector: 'app-container-component',
@@ -11,7 +11,7 @@ import { AsyncPipe } from '@angular/common';
   styleUrls: ['./container-component.component.scss']
 })
 export class ContainerComponentComponent implements OnInit {
-  httpService = inject(TestDemoService);
+  httpService = inject(PokeService);
 
   pokeDetails$: Observable<any[]> = this.httpService.pokeDetails$;
 

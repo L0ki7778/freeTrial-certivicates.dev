@@ -1,12 +1,12 @@
 import { fakeAsync, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { TestDemoService } from './test-demo.service';
+import { PokeService } from './pokemon-service';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { pokeList } from './mockdata';
 
-xdescribe('TestDemoService', () => {
-  let service: TestDemoService,
+xdescribe('PokeService', () => {
+  let service: PokeService,
     httpTestingController: HttpTestingController;
 
 
@@ -17,7 +17,7 @@ xdescribe('TestDemoService', () => {
         provideHttpClientTesting()
       ]
     });
-    service = TestBed.inject(TestDemoService);
+    service = TestBed.inject(PokeService);
     httpTestingController = TestBed.inject(HttpTestingController);
   });
 

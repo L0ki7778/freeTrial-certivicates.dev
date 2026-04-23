@@ -1,6 +1,6 @@
 import { Component, output } from '@angular/core';
 
-import { LetterAnimationDirective } from '../../directives/letter-animation.directive';
+import { LetterAnimationDirective } from '../../../directive-feature/directives/letter-animation.directive';
 
 @Component({
   selector: 'output',

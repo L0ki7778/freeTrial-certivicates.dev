@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 import { HeroComponent } from './components/hero/hero.component';
-import { SignalPresentationComponent } from './components/signal-presentation/signal-presentation.component';
-import { DirectivesPlaygroundComponent } from './components/directives-playground/directives-playground.component';
+import { SignalPresentationComponent } from './features/signals/components/signal-presentation/signal-presentation.component';
+import { DirectivesPlaygroundComponent } from './features/directive-feature/components/directives-playground/directives-playground.component';
 import { DemoComponent } from './components/demo/demo.component';
-import { RouteInputsComponent } from './components/route-inputs/route-inputs.component';
-import { ContainerComponentComponent } from './testing-practice/container-component/container-component.component';
+import { RouteInputsComponent } from './features/routing/components/route-inputs/route-inputs.component';
+import { ContainerComponentComponent } from './features/api/components/pokemon-container/container-component.component';
 
 export const routes: Routes = [
   { path: '', component: HeroComponent },

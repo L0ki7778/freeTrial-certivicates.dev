@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, computed, effect,OnInit,Signal, signal, viewChild, WritableSignal } from '@angular/core';
-import { LetterAnimationDirective } from '../../directives/letter-animation.directive';
+import { LetterAnimationDirective } from '../../../directive-feature/directives/letter-animation.directive';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { AsyncPipe } from '@angular/common';
-import { ModelSignalComponent } from './model-signal/model-signal.component';
+import { ModelSignalComponent } from '../model-signal/model-signal.component';
 
 @Component({
   selector: 'signal',

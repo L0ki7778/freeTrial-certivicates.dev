@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, lastValueFrom, Observable } from 'rxjs';
-import { Pokemon } from '../../interfaces/pokemon';
+import { Pokemon } from '../../../../interfaces/pokemon';
 import { switchMap, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TestDemoService {
+export class PokeService {
   http = inject(HttpClient);
   pokeList: Pokemon[] = [];
   private pokeDetailsSubject = new BehaviorSubject<any[]>([]);

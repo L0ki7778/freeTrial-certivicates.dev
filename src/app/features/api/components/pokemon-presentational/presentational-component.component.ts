@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
-import { Pokemon } from '../../interfaces/pokemon';
 import { CommonModule } from '@angular/common';
+import { Pokemon } from '../../../../interfaces/pokemon';
 
 @Component({
   selector: 'card',
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './presentational-component.component.scss'
 })
 export class PresentationalComponentComponent {
-  pokemon = input.required<any>()
+  pokemon = input.required<Pokemon>()
   ngOnInit() {
     console.log(this.pokemon())
   }

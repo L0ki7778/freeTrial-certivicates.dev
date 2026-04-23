@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HashtagSyntaxComponent } from '../hashtag-syntax/hashtag-syntax.component';
+import { HashtagSyntaxComponent } from '../../../routing/components/hashtag-syntax/hashtag-syntax.component';
 import { SignalComponent } from '../signal/signal.component';
 
 @Component({
