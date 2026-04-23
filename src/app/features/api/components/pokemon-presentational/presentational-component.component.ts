@@ -1,10 +1,10 @@
 import { Component, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { Pokemon } from '../../../../interfaces/pokemon';
 
 @Component({
   selector: 'card',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './presentational-component.component.html',
   styleUrl: './presentational-component.component.scss'
 })
