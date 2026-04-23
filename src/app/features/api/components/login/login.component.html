@@ -1,0 +1,34 @@
+<h1 class="text-3xl">Signal Forms</h1>
+<form (submit)="onSubmit($event)">
+    <div>
+        <label>
+            Email:
+            <input [formField]="loginForm.email" type="email" />
+        </label>
+        @if (loginForm.email().touched() && loginForm.email().invalid()) {
+            <ul class="error-list">
+                @for (error of loginForm.email().errors(); track error) {
+                    <li>{{ error.message }}</li>
+                }
+            </ul>
+        }
+    </div>
+    <div>
+        <label>
+            Password:
+            <input [formField]="loginForm.password" type="password" />
+        </label>
+        @if (loginForm.password().touched() && loginForm.password().invalid()) {
+            <div class="error-list">
+                @for (error of loginForm.password().errors(); track error) {
+                    <p>{{ error.message }}</p>
+                }
+            </div>
+        }
+    </div>
+    <button type="submit">Log In</button>
+</form>
+
+<pre>
+    {{ submittedData() | json }}
+</pre>

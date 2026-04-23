@@ -5,6 +5,7 @@ import { DirectivesPlaygroundComponent } from './features/directive-feature/comp
 import { DemoComponent } from './components/demo/demo.component';
 import { RouteInputsComponent } from './features/routing/components/route-inputs/route-inputs.component';
 import { ContainerComponentComponent } from './features/api/components/pokemon-container/container-component.component';
+import { LoginComponent } from './features/api/components/login/login.component';
 
 export const routes: Routes = [
   { path: '', component: HeroComponent },
@@ -12,5 +13,6 @@ export const routes: Routes = [
   { path: 'demo', component: DemoComponent },
   { path: 'directive', component: DirectivesPlaygroundComponent },
   { path: 'routing', component: RouteInputsComponent },
-  { path: 'testing', component: ContainerComponentComponent }
+  { path: 'testing', component: ContainerComponentComponent },
+  { path: 'login', component: LoginComponent }
 ];
