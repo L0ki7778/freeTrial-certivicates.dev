@@ -7,13 +7,13 @@ export class HostPracticeDirective {
 
 
   @HostBinding('class.yellow-bg')
-  private yellowBg = true
+  protected yellowBg = true
 
-  @HostBinding('disabled')
-  private disabled = false//beim Test gerne ein btn nutzen :)
+  @HostBinding('attr.disabled')
+  protected disabled = false//beim Test gerne ein btn nutzen :)
 
   @HostBinding('class.isActive')
-  private _isActive = true 
+  protected _isActive = true 
 
   @Input()
   set appHostPractice(value: boolean) {//hier wird durch einen Input festgelegt, ob die Attribut-Direktive true oder false ist
